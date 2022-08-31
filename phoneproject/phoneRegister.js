@@ -42,7 +42,7 @@ module.exports = class PhoneRegister {
     }
   } // end of getPersonsNumbersByType
 
-  getAllNumbersByType(number) {
+  getAllNumbersByType(type) {
     const foundNumbers = [];
 
     return foundNumbers;

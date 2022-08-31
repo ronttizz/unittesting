@@ -228,7 +228,7 @@ describe("Test Cases for getAllNumbersByType", () => {
     expect(register.getAllNumbersByType("cell")).toEqual([]);
   });
 
-  test("Test 4: parameter is missing throws en exception `'missing parameter'`", () => {
+  test("Test 4: parameter is missing throws an exception `'missing parameter'`", () => {
     test(() => register.getAllNumbersByType()).toThrow("missing parameter");
   });
 

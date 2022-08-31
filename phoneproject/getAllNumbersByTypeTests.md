@@ -74,7 +74,7 @@ register.getAllNumbersByType("cell");
 
 returns []
 
-## Test 4: parameter is missing throws en exception `'missing parameter'`
+## Test 4: parameter is missing throws an exception `'missing parameter'`
 
 ```js
 register.getAllNumbersByType();
