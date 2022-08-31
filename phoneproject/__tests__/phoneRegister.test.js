@@ -169,7 +169,7 @@ describe("Test Cases for getAllNumbersByType", () => {
   const register = new PhoneRegister(phones);
 
   test("Test 1: get all work numbers using default data", () => {
-    expect(register.getAllNumbersByType("work")).toEqual([
+    const expectedValue = [
       {
         firstname: "Leila",
         lastname: "Hökki",
@@ -185,27 +185,43 @@ describe("Test Cases for getAllNumbersByType", () => {
         lastname: "River",
         number: { type: "work", tel: "3214569" },
       },
-    ]);
+    ];
+
+    expect(register.getAllNumbersByType("work")).toEqual(expectedValue);
   });
 
   test("Test 2A: get all mobile numbers using default data", () => {
-    expect(register.getAllNumbersByType("mobile")).toEqual([
+    const expectedValue = [
+      {
+        firstname: "Leila",
+        lastname: "Hökki",
+        phones: [
+          {
+            type: "home",
+            number: "12345678",
+          },
+        ],
+      },
       {
         firstname: "Matt",
         lastname: "River",
         number: { type: "mobile", tel: "045678912" },
       },
-    ]);
+    ];
+
+    expect(register.getAllNumbersByType("mobile")).toEqual(expectedValue);
   });
 
   test("Test 2B: get all home numbers using default data", () => {
-    expect(register.getAllNumbersByType("home")).toEqual([
+    const expectedValue = [
       {
         firstname: "Matt",
         lastname: "River",
         number: { type: "home", tel: "567890123" },
       },
-    ]);
+    ];
+
+    expect(register.getAllNumbersByType("home")).toEqual(expectedValue);
   });
 
   test("Test 3: no number of given type is found", () => {
@@ -229,14 +245,16 @@ describe("Test Cases for getAllNumbersByType", () => {
       },
     ];
 
-    const register2 = new PhoneRegister(testData);
-
-    expect(register2.getAllNumbersByType("home")).toEqual([
+    const expectedValue = [
       {
         firstname: "Vera",
         lastname: "Jones",
         phones: [{ type: "home", number: "123123678" }],
       },
-    ]);
+    ];
+
+    const register2 = new PhoneRegister(testData);
+
+    expect(register2.getAllNumbersByType("home")).toEqual(expectedValue);
   });
 });
