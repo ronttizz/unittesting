@@ -350,4 +350,45 @@ describe("Test cases for getAllNumbers", () => {
 
     expect(register.getAllNumbers()).toEqual([]);
   });
+
+  describe("Test cases for getName", () => {
+    const register = new PhoneRegister(phones);
+
+    test("Test1: get Matt River by number", () => {
+      const expectedValue = { firstname: "Matt", lastname: "River" };
+      expect(register.getName("045678912")).toEqual(expectedValue);
+    });
+
+    describe("Test 1B: get name of the number", () => {
+      const testValues = [
+        ["12345678", { firstname: "Leila", lastname: "Hökki" }],
+        ["87654321", { firstname: "Leila", lastname: "Hökki" }],
+        ["567890123", { firstname: "Matt", lastname: "River" }],
+        ["045678912", { firstname: "Matt", lastname: "River" }],
+      ];
+
+      test.each(testValues)(
+        "number %s returns %p",
+        (number, expected) => {
+          expect(register.getName(number)).toEqual(expected);
+        }
+        // "firstname = %s, lastname = %s, type = %s returns []",
+        // (firstname, lastname, type) => {
+        //   expect(register.getPersonsNumbersByType(firstname, lastname, type)).toEqual([]);
+        // }
+      );
+    });
+
+    describe("Test 2: no matches for number", () => {
+      const testValues = [["123"], ["abc"], ["045"]];
+
+      test.each(testValues)("%s returns 'null'", (number) => {
+        expect(register.getName(number)).toBeNull();
+      });
+    });
+
+    test("Test 3: parameter is missing", () => {
+      expect(register.getName()).toBeNull();
+    });
+  });
 });

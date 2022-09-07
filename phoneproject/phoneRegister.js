@@ -78,5 +78,21 @@ module.exports = class PhoneRegister {
     }
 
     return found;
-  }
+  } // end of getAllNumbers
+
+  getName(number) {
+    if (number) {
+      for (let person of this.phoneData) {
+        for (let phone of person.phones) {
+          if (phone.number === number) {
+            return {
+              firstname: person.firstname,
+              lastname: person.lastname,
+            };
+          }
+        }
+      }
+    }
+    return null;
+  } // end of getName
 }; // end of class
