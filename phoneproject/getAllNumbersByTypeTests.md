@@ -96,6 +96,10 @@ testData:
       { "type": "home" },
       { "type": "home", "number": "123123678" }
     ]
+  },
+  {
+    "firstname": "Mary",
+    "lastname": "Smith"
   }
 ]
 ```

@@ -193,16 +193,6 @@ describe("Test Cases for getAllNumbersByType", () => {
   test("Test 2A: get all mobile numbers using default data", () => {
     const expectedValue = [
       {
-        firstname: "Leila",
-        lastname: "Hökki",
-        phones: [
-          {
-            type: "home",
-            number: "12345678",
-          },
-        ],
-      },
-      {
         firstname: "Matt",
         lastname: "River",
         number: { type: "mobile", tel: "045678912" },
@@ -214,6 +204,14 @@ describe("Test Cases for getAllNumbersByType", () => {
 
   test("Test 2B: get all home numbers using default data", () => {
     const expectedValue = [
+      {
+        firstname: "Leila",
+        lastname: "Hökki",
+        number: {
+          type: "home",
+          tel: "12345678",
+        },
+      },
       {
         firstname: "Matt",
         lastname: "River",
@@ -228,8 +226,8 @@ describe("Test Cases for getAllNumbersByType", () => {
     expect(register.getAllNumbersByType("cell")).toEqual([]);
   });
 
-  test("Test 4: parameter is missing throws an exception `'missing parameter'`", () => {
-    test(() => register.getAllNumbersByType()).toThrow("missing parameter");
+  test("Test 4: parameter is missing throws an exception 'missing parameter'", () => {
+    expect(() => register.getAllNumbersByType()).toThrow("missing parameter");
   });
 
   test("Test 5: person has type but the corresponding number is missing", () => {
@@ -243,13 +241,17 @@ describe("Test Cases for getAllNumbersByType", () => {
           { type: "home", number: "123123678" },
         ],
       },
+      {
+        firstname: "Mary",
+        lastname: "Smith",
+      },
     ];
 
     const expectedValue = [
       {
         firstname: "Vera",
         lastname: "Jones",
-        phones: [{ type: "home", number: "123123678" }],
+        number: { type: "home", tel: "123123678" },
       },
     ];
 
