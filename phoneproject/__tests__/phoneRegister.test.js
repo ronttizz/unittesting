@@ -260,3 +260,94 @@ describe("Test Cases for getAllNumbersByType", () => {
     expect(register2.getAllNumbersByType("home")).toEqual(expectedValue);
   });
 });
+
+describe("Test cases for getAllNumbers", () => {
+  test("Test 1: All persons are missing", () => {
+    const register = new PhoneRegister([]);
+    expect(register.getAllNumbers()).toEqual([]);
+  });
+
+  test("Test 2: get all numbers from default data", () => {
+    const register = new PhoneRegister(phones);
+    expect(register.getAllNumbers()).toEqual(phones);
+  });
+
+  test("Test 3: person doesn't have a phone (the phone field is missing or is an empty array) not added", () => {
+    const testData = [
+      {
+        firstname: "Leila",
+        lastname: "Hökki",
+        phones: [
+          {
+            type: "home",
+            number: "12345678",
+          },
+          {
+            type: "work",
+            number: "87654321",
+          },
+          {
+            type: "work",
+            number: "05040302",
+          },
+        ],
+      },
+      {
+        firstname: "Matt",
+        lastname: "River",
+        phones: [],
+      },
+      {
+        firstname: "Vera",
+        lastname: "River",
+      },
+    ];
+
+    const expectedValue = [
+      {
+        firstname: "Leila",
+        lastname: "Hökki",
+        phones: [
+          {
+            type: "home",
+            number: "12345678",
+          },
+          {
+            type: "work",
+            number: "87654321",
+          },
+          {
+            type: "work",
+            number: "05040302",
+          },
+        ],
+      },
+    ];
+
+    const register = new PhoneRegister(testData);
+
+    expect(register.getAllNumbers()).toEqual(expectedValue);
+  });
+
+  test("Test 4: all phones are missing", () => {
+    const testData = [
+      {
+        firstname: "Leila",
+        lastname: "Hökki",
+        phones: [],
+      },
+      {
+        firstname: "Matt",
+        lastname: "River",
+        phones: [],
+      },
+      {
+        firstname: "Vera",
+        lastname: "River",
+      },
+    ];
+    const register = new PhoneRegister(testData);
+
+    expect(register.getAllNumbers()).toEqual([]);
+  });
+});
