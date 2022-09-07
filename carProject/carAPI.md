@@ -1,0 +1,12 @@
+# Carstorage API
+
+## cars.json
+
+```json
+[
+  { "model": "Bored T-model", "license": "ABC-1" },
+  { "model": "Nova", "license": "XYZ-123" },
+  { "model": "Bored T-model", "license": "GTF-10" },
+  { "model": "GTX-model", "license": "B-1" }
+]
+```
