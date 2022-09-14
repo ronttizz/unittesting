@@ -121,7 +121,7 @@ Method checks based on productNumber if the product has `info` or not.
 
 > Returns:
 >
-> > Returns true if the product matching the searchKey has `info` object and it is not an empty array else returns false. If parameter searchKey is missing false is returned
+> > Returns true if the product matching the searchKey has `info` object and it is not an empty object else returns false. If parameter searchKey is missing false is returned
 
 > Throws:
 >
