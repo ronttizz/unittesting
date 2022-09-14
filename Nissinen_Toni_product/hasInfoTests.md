@@ -4,7 +4,7 @@
 
 Before create `'products'` object with default data
 
-## Test 1: get `'true'` or `'true'` searching given searchKey from testKeys array using default data
+## Test 1: get `'true'` or `'false'` searching given searchKey from testKeys array using default data
 
 ```js
 const testKeys = [
@@ -30,7 +30,7 @@ false
 ## Test 2: get `'false'` searching with `'null'` as a parameter
 
 ```js
-products.has:info(null);
+products.has_info(null);
 ```
 
 returns
