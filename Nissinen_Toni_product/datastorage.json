@@ -1,0 +1,62 @@
+[
+  {
+    "productNumber": 1,
+    "name": "Tako delux",
+    "type": "toaster",
+    "price": 300,
+    "manufacturer": "Penquin appliances",
+    "colors": ["black", "blue", "green"],
+    "info": {
+      "energyclass": "A+",
+      "model": "gold",
+      "comments": "no comments"
+    }
+  },
+  {
+    "productNumber": 2,
+    "name": "Future 2025",
+    "type": "moccamaster",
+    "price": 300,
+    "manufacturer": "Leila Hökki & co",
+    "colors": ["green", "white", "orange"],
+    "info": {
+      "energyclass": "E",
+      "model": "chrome",
+      "comments": "-"
+    }
+  },
+  {
+    "productNumber": 3,
+    "name": "MaxEffect 2000",
+    "type": "phone",
+    "price": 15,
+    "manufacturer": "Leila Hökki & co",
+    "colors": ["red", "green", "yellow"],
+    "info": {
+      "energyclass": "B",
+      "model": "gold",
+      "comments": "no comments"
+    }
+  },
+  {
+    "productNumber": 4,
+    "name": "MaxEffect 2000",
+    "type": "radio",
+    "price": 36,
+    "manufacturer": "Electric devices",
+    "colors": ["green", "orange", "white"],
+    "info": {
+      "energyclass": "C",
+      "model": "silver",
+      "comments": "-"
+    }
+  },
+  {
+    "productNumber": 5,
+    "name": "Tako delux",
+    "type": "toaster",
+    "price": 15,
+    "manufacturer": "Ocean",
+    "colors": ["blue", "black", "yellow"]
+  }
+]
