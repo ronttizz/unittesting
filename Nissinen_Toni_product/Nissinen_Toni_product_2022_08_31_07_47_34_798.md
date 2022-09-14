@@ -97,7 +97,7 @@ Initializes ProductStorage object
 
 ### **get_total_price_of_products_by_type(searchValue)**
 
-returns the total price of all cars that have the same type than the given searchValue
+returns the total price of all products that have the same type than the given searchValue
 
 > Parameters:
 >
