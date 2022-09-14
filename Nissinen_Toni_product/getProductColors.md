@@ -16,6 +16,14 @@ const testKeys = [
 ];
 ```
 
+```js
+products.get_product_colors(1);
+products.get_product_colors(2);
+products.get_product_colors(3);
+products.get_product_colors(4);
+products.get_product_colors(5);
+```
+
 returns
 
 ```json
