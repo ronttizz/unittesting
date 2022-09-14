@@ -45,3 +45,15 @@ returns
 ```shell
 false
 ```
+
+## Test 3: get `'false'` searching without a parameter
+
+```js
+products.has_info(null);
+```
+
+returns
+
+```shell
+false
+```
