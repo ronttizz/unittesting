@@ -2,4 +2,4 @@
 
 const search = require("./carStorageFilePromises");
 
-search().then(console.log()).catch(console.log());
+search().then(console.log).catch(console.log);
