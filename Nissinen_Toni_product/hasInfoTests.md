@@ -16,6 +16,14 @@ const testKeys = [
 ];
 ```
 
+```js
+products.has_info(1);
+products.has_info(2);
+products.has_info(3);
+products.has_info(4);
+products.has_info(5);
+```
+
 return
 
 ```shell
@@ -23,7 +31,6 @@ true
 true
 true
 true
-false
 false
 ```
 
