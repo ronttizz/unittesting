@@ -19,7 +19,8 @@ module.exports = (key, value) => {
             }
           }
         } else {
-          found = cars;
+          // found = cars;
+          reject("parameter missing");
         }
         resolve(found);
       }
