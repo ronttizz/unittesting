@@ -69,7 +69,17 @@ const testData = [
 ```
 
 ```js
+const products = new ProductStorage(testData);
+```
+
+```js
 const testKeys = [[1][2][3]];
+```
+
+```js
+products.get_product_colors(1);
+products.get_product_colors(2);
+products.get_product_colors(3);
 ```
 
 returns []
