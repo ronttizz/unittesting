@@ -7,7 +7,7 @@
   { "model": "Bored T-model", "licence": "ABC-1" },
   { "model": "Nova", "licence": "XYZ-123" },
   { "model": "Bored T-model", "licence": "GTF-10" },
-  { "model": "GTX-model", "licence": "B-1" }
+  { "model": "GTX", "licence": "B-1" }
 ]
 ```
 
@@ -82,6 +82,6 @@ returns
   { "model": "Bored T-model", "licence": "ABC-1" },
   { "model": "Nova", "licence": "XYZ-123" },
   { "model": "Bored T-model", "licence": "GTF-10" },
-  { "model": "GTX-model", "licence": "B-1" }
+  { "model": "GTX", "licence": "B-1" }
 ]
 ```
