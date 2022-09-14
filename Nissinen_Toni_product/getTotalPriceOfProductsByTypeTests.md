@@ -2,7 +2,7 @@
 
 - returns the total price of all products that have the same type than the given searchValue. if no product with the given searchValue is found throws an exeption 'nothing found with given'. If a parameter searchValue is missing, an exeption 'missing parameter' is thrown
 
-Before test create `'products'` object with default data
+Before tests create `'products'` object with default data
 
 ## Test 1: get total cumulative price of toasters using default data
 

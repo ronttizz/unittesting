@@ -2,7 +2,7 @@
 
 - Method checks based on productNumber if the product has `'info'` or not.
 
-Before create `'products'` object with default data
+Before tests create `'products'` object with default data
 
 ## Test 1: get `'true'` or `'false'` searching given searchKey from testKeys array using default data
 

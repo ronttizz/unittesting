@@ -2,7 +2,7 @@
 
 - searches products with given type returns an array of given type, returns an array of product objects of given type. If no product of given type is found, returns an empty array. If a parameter searchValue is missing, an exeption 'missing parameter' is thrown
 
-Before create `'products'` object with default data
+Before tests create `'products'` object with default data
 
 ## Test 1: get all products searching `'toaster'`
 
