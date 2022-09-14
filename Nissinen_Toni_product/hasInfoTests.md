@@ -13,7 +13,6 @@ const testKeys = [
   [3, true],
   [4, true],
   [5, false],
-  ["", false],
 ];
 ```
 
@@ -25,5 +24,17 @@ true
 true
 true
 false
+false
+```
+
+## Test 2: get `'false'` searching with `'null'` as a parameter
+
+```js
+products.has:info(null);
+```
+
+returns
+
+```shell
 false
 ```
