@@ -40,11 +40,13 @@ results
 products.get_Price(6);
 products.get_Price(7);
 products.get_Price(8);
+products.get_Price();
 ```
 
 returns
 
 ```shell
+'nothing found with given'
 'nothing found with given'
 'nothing found with given'
 'nothing found with given'
