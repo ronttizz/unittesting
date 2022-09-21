@@ -19,4 +19,17 @@ module.exports = class ProductStorage {
     }
     return total;
   }
+
+  has_info(id) {
+    for (let product of this.productData) {
+      if (
+        product.productNumber === id &&
+        product.info &&
+        Object.entries(product.info).length !== 0
+      ) {
+        return true;
+      }
+    }
+    return false;
+  }
 };
