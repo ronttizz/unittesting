@@ -5,4 +5,18 @@ module.exports = class ProductStorage {
     if (!data) throw new Error("data storage missing");
     this.productData = data;
   }
+
+  get_total_price_of_products_by_type(type) {
+    let total = 0;
+    if (!type) throw new Error("missing parameter");
+    for (let product of this.productData) {
+      if (product.type === type) {
+        total += product.price;
+      }
+    }
+    if (total === 0) {
+      throw new Error("'nothing found with given'");
+    }
+    return total;
+  }
 };
