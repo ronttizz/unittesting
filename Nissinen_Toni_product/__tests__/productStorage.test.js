@@ -17,7 +17,7 @@ describe("Tests for get_total_price_of_products_by_type", () => {
   });
 
   test("Test 2: get total cumulative price of phones using default data", () => {
-    expect(products.get_total_price_of_products_by_type("toaster")).toEqual(15);
+    expect(products.get_total_price_of_products_by_type("phone")).toEqual(15);
   });
 
   test("Test 3: throw en exception `'nothing found with given'` using default data", () => {
