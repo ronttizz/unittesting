@@ -117,3 +117,59 @@ describe("Test cases for get_all_products_by_type", () => {
     expect(() => products.get_all_products_by_type()).toThrow("missing parameter");
   });
 });
+
+describe("Tests for get_product_colors", () => {
+  describe("Test 1: get array of colors searching with testKeys using default data", () => {
+    const products = new ProductStorage(datastorage);
+
+    const testKeys = [
+      [1, ["black", "blue", "green"]],
+      [2, ["green", "white", "orange"]],
+      [3, ["red", "green", "yellow"]],
+      [4, ["green", "orange", "white"]],
+      [5, ["blue", "black", "yellow"]],
+    ];
+
+    test.each(testKeys)("get_product_colors(%s) returns %s", (productId, expected) => {
+      expect(products.get_product_colors(productId)).toEqual(expected);
+    });
+  });
+
+  describe("Test 2: get empty array searching testKeys using testData", () => {
+    const testData = [
+      {
+        productNumber: 1,
+        name: "Tako delux",
+        type: "toaster",
+        price: 300,
+        manufacturer: "Penquin appliances",
+        colors: [],
+        info: {
+          energyclass: "A+",
+          model: "gold",
+          comments: "no comments",
+        },
+      },
+      {
+        productNumber: 2,
+        name: "Future 2025",
+        type: "moccamaster",
+        price: 300,
+        manufacturer: "Leila Hökki & co",
+        info: {
+          energyclass: "E",
+          model: "chrome",
+          comments: "-",
+        },
+      },
+    ];
+
+    const products = new ProductStorage(testData);
+
+    const testKeys = [[1], [2], [3]];
+
+    test.each(testKeys)("get_product_colors(%s) returns []", (productId) => {
+      expect(products.get_product_colors(productId)).toEqual([]);
+    });
+  });
+});
