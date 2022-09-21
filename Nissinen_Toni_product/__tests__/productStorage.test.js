@@ -32,3 +32,28 @@ describe("Tests for get_total_price_of_products_by_type", () => {
     );
   });
 });
+
+describe("Test cases for has_info", () => {
+  const products = new ProductStorage(datastorage);
+
+  describe("Test 1: get `'true'` or `'false'` searching given searchKey from testKeys array using default data", () => {
+    const testKeys = [
+      [1, true],
+      [2, true],
+      [3, true],
+      [4, true],
+      [5, false],
+    ];
+    test.each(testKeys)("has_info(%s) returns %s", (productId, expected) => {
+      expect(products.has_info(productId)).toEqual(expected);
+    });
+  });
+
+  test("Test 2: get `'false'` searching with `'null'` as a parameter", () => {
+    expect(products.has_info(null)).toEqual(false);
+  });
+
+  test("Test 3: get `'false'` searching without a parameter", () => {
+    expect(products.has_info()).toEqual(false);
+  });
+});
