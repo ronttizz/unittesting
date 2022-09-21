@@ -199,5 +199,8 @@ describe("Test case for get_Price", () => {
         expect(() => products.get_Price(productId)).toThrow("nothing found with given");
       }
     );
+    test("get_Price() throws exception 'nothing found with given'", () => {
+      expect(() => products.get_Price()).toThrow("nothing found with given");
+    });
   });
 });
