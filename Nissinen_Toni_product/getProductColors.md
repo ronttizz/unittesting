@@ -73,7 +73,7 @@ const products = new ProductStorage(testData);
 ```
 
 ```js
-const testKeys = [[1][2][3]];
+const testKeys = [[1], [2], [3]];
 ```
 
 ```js
