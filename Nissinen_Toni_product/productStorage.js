@@ -59,4 +59,13 @@ module.exports = class ProductStorage {
     }
     return colors;
   }
+
+  get_Price(id) {
+    for (let product of this.productData) {
+      if (product.productNumber === id) {
+        return product.price;
+      }
+    }
+    throw new Error("nothing found with given");
+  }
 };
