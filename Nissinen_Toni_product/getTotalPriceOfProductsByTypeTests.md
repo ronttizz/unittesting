@@ -28,7 +28,7 @@ return
 15
 ```
 
-## Test 3: throw `'nothing found with given'` using default data
+## Test 3: throw an exception `'nothing found with given'` using default data
 
 ```js
 products.get_total_price_of_products_by_type("computer");
@@ -40,7 +40,7 @@ return
 'nothing found with given'
 ```
 
-## Test 4: throw `'missing parameter'`
+## Test 4: throw an exception `'missing parameter'`
 
 ```js
 products.get_total_price_of_products_by_type();
