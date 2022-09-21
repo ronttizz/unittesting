@@ -43,4 +43,20 @@ module.exports = class ProductStorage {
     }
     return found;
   }
+
+  get_product_colors(id) {
+    const colors = [];
+    for (let product of this.productData) {
+      if (product.productNumber === id) {
+        if (product.colors) {
+          product.colors.forEach((color) => {
+            if (colors.contains !== color) {
+              colors.push(color);
+            }
+          });
+        }
+      }
+    }
+    return colors;
+  }
 };
