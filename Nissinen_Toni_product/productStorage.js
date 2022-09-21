@@ -32,4 +32,15 @@ module.exports = class ProductStorage {
     }
     return false;
   }
+
+  get_all_products_by_type(type) {
+    const found = [];
+    if (!type) throw new Error("missing parameter");
+    for (let product of this.productData) {
+      if (product.type === type) {
+        found.push(product);
+      }
+    }
+    return found;
+  }
 };
