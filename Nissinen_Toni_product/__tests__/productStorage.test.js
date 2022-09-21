@@ -57,3 +57,63 @@ describe("Test cases for has_info", () => {
     expect(products.has_info()).toEqual(false);
   });
 });
+
+describe("Test cases for get_all_products_by_type", () => {
+  const products = new ProductStorage(datastorage);
+
+  test("Test 1: get all products searching `'toaster'`", () => {
+    const expected = [
+      {
+        productNumber: 1,
+        name: "Tako delux",
+        type: "toaster",
+        price: 300,
+        manufacturer: "Penquin appliances",
+        colors: ["black", "blue", "green"],
+        info: {
+          energyclass: "A+",
+          model: "gold",
+          comments: "no comments",
+        },
+      },
+      {
+        productNumber: 5,
+        name: "Tako delux",
+        type: "toaster",
+        price: 15,
+        manufacturer: "Ocean",
+        colors: ["blue", "black", "yellow"],
+      },
+    ];
+
+    expect(producst.get_all_products_by_type("toaster")).toEqual(expected);
+  });
+
+  test("Test 2: get all products searching `'phone'`", () => {
+    const expected = [
+      {
+        productNumber: 3,
+        name: "MaxEffect 2000",
+        type: "phone",
+        price: 15,
+        manufacturer: "Leila Hökki & co",
+        colors: ["red", "green", "yellow"],
+        info: {
+          energyclass: "B",
+          model: "gold",
+          comments: "no comments",
+        },
+      },
+    ];
+
+    expect(producst.get_all_products_by_type("phone")).toEqual(expected);
+  });
+
+  test("Test 3: get all products searching `'computer'`", () => {
+    expect(producst.get_all_products_by_type("computer")).toEqual([]);
+  });
+
+  test("Test 4: searching with no parameter throws an exception `'missing parameter'`", () => {
+    expect(() => producst.get_all_products_by_type()).toThrow("missing parameter");
+  });
+});
