@@ -86,7 +86,7 @@ describe("Test cases for get_all_products_by_type", () => {
       },
     ];
 
-    expect(producst.get_all_products_by_type("toaster")).toEqual(expected);
+    expect(products.get_all_products_by_type("toaster")).toEqual(expected);
   });
 
   test("Test 2: get all products searching `'phone'`", () => {
@@ -106,14 +106,14 @@ describe("Test cases for get_all_products_by_type", () => {
       },
     ];
 
-    expect(producst.get_all_products_by_type("phone")).toEqual(expected);
+    expect(products.get_all_products_by_type("phone")).toEqual(expected);
   });
 
   test("Test 3: get all products searching `'computer'`", () => {
-    expect(producst.get_all_products_by_type("computer")).toEqual([]);
+    expect(products.get_all_products_by_type("computer")).toEqual([]);
   });
 
   test("Test 4: searching with no parameter throws an exception `'missing parameter'`", () => {
-    expect(() => producst.get_all_products_by_type()).toThrow("missing parameter");
+    expect(() => products.get_all_products_by_type()).toThrow("missing parameter");
   });
 });
