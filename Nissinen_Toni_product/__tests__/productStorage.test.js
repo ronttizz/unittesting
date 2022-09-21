@@ -173,3 +173,31 @@ describe("Tests for get_product_colors", () => {
     });
   });
 });
+
+describe("Test case for get_Price", () => {
+  const products = new ProductStorage(datastorage);
+  describe("Test 1: get product price by searhing with given productnumbers", () => {
+    const testKeys = [
+      [1, 300],
+      [2, 300],
+      [3, 15],
+      [4, 36],
+      [5, 15],
+    ];
+
+    test.each(testKeys)("get_Price(%s) returns %s", (productId, expected) => {
+      expect(products.get_Price(productId)).toEqual(expected);
+    });
+  });
+
+  describe("Test 2: no product is found throws exception `'nothing found with given'`", () => {
+    const testKeys = [[6], [7], [8]];
+
+    test.each(testKeys)(
+      "get_Price(%s) throws exception 'nothing found with given' ",
+      (productId) => {
+        expect(() => products.get_Price(productId)).toThrow("nothing found with given");
+      }
+    );
+  });
+});
