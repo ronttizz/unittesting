@@ -19,7 +19,7 @@ return
 ## Test 2: get total cumulative price of phones using default data
 
 ```js
-products.get_total_price_of_products_by_type("toaster");
+products.get_total_price_of_products_by_type("phone");
 ```
 
 return
