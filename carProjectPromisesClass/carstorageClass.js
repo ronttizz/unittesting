@@ -11,7 +11,7 @@ module.exports = class Storage {
     return new Promise(async (resolve, reject) => {
       try {
         if (key && value) {
-          if (!["model, license"].includes(key)) {
+          if (!["model", "license"].includes(key)) {
             reject("key not found");
           } else {
             const data = await fs.readFile(this.storageFile, "utf8");
