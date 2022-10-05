@@ -73,3 +73,18 @@ describe("create dice with upper bounds 2-20 version 3", function () {
     testUpperBound(uBound);
   }
 });
+
+describe("Test exceptions", function () {
+  const testCases = [
+    { ubound: -1, result: "upper bound too small" },
+    { ubound: 21, result: "upper bound too big" },
+    { ubound: "a", result: "upper bound must be an integer" },
+  ];
+  testCases.forEach(function (testCase) {
+    it(`Upper Bound ${testCase.ubound} throws "${testCase.result}"`, function () {
+      expect(function () {
+        new Dice(testCase.ubound);
+      }).to.throw(testCase.result);
+    });
+  });
+});
