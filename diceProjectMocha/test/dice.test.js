@@ -127,3 +127,20 @@ describe("test for 2-20", function () {
     }
   }
 });
+
+describe("test toString", function () {
+  let dice;
+
+  beforeEach(function () {
+    dice = new Dice();
+  });
+
+  it("dice is rolled", function () {
+    dice.roll();
+    expect(dice.toString()).to.equal(`${dice.dots}`);
+  });
+
+  it("dice is not rolled yet", function () {
+    expect(dice.toString()).to.equal("Not rolled yet");
+  });
+});
