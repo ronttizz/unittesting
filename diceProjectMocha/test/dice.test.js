@@ -39,3 +39,37 @@ describe("Create dice with no upper bound given", function () {
     expect(dice.dots).to.equal(0);
   });
 });
+
+describe("create dice with upper bounds 2-20", function () {
+  const testCases = new Array(19).fill(2).map((value, ind) => value + ind);
+
+  testCases.forEach(function (uBound) {
+    it(`upper bound is ${uBound}`, function () {
+      const dice = new Dice(uBound);
+      expect(dice.maximumValue).to.equal(uBound);
+    });
+  });
+});
+
+describe("create dice with upper bounds 2-20 version 2", function () {
+  for (let uBound = 2; uBound < 21; uBound++) {
+    const dice = new Dice(uBound);
+    it(`upper bound is ${uBound}`, function () {
+      expect(dice.maximumValue).to.equal(uBound);
+    });
+  }
+});
+
+describe("create dice with upper bounds 2-20 version 3", function () {
+  // WITH THIS KIND OF TEST testUpperBound(uBound) FUNCTION MIGHT ALSO NEED OWN TESTS
+  function testUpperBound(uBound) {
+    const dice = new Dice(uBound);
+    it(`upper bound is ${uBound}`, function () {
+      expect(dice.maximumValue).to.equal(uBound);
+    });
+  }
+
+  for (let uBound = 2; uBound < 21; uBound++) {
+    testUpperBound(uBound);
+  }
+});
