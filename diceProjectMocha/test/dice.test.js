@@ -23,3 +23,19 @@ describe("methods defined", function () {
     expect(dice).to.have.a.property("toString");
   });
 });
+
+describe("Create dice with no upper bound given", function () {
+  const dice = new Dice();
+
+  it("maximum dot count is 6", function () {
+    expect(dice.maximumValue).to.equal(6);
+  });
+
+  it("minimum dot count is 1", function () {
+    expect(dice.minimumValue).to.equal(1);
+  });
+
+  it("dots is 0", function () {
+    expect(dice.dots).to.equal(0);
+  });
+});
