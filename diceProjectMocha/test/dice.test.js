@@ -88,3 +88,30 @@ describe("Test exceptions", function () {
     });
   });
 });
+
+describe("The upper bound too small", function () {
+  [-1, 0, 1].forEach(function (ubound) {
+    it(`Upper bound ${ubound} throws 'upper bound too small'`, function () {
+      expect(function () {
+        new Dice(ubound);
+      }).to.throw("upper bound too small");
+    });
+  });
+});
+
+describe("test roll", function () {
+  let dice;
+
+  beforeEach(function () {
+    dice = new Dice();
+  });
+
+  it("test when dice hasn't been rolled", function () {
+    expect(dice.dots).to.equal(0);
+  });
+
+  it("test when rolled", function () {
+    dice.roll();
+    expect(dice.dots).to.be.within(1, 6);
+  });
+});
