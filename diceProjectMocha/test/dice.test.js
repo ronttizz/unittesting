@@ -115,3 +115,15 @@ describe("test roll", function () {
     expect(dice.dots).to.be.within(1, 6);
   });
 });
+
+describe("test for 2-20", function () {
+  for (let ub = 2; ub < 21; ub++) {
+    const dice = new Dice(ub);
+    for (let i = 0; i < 10; i++) {
+      dice.roll();
+      it(`ubound = ${ub}, dot count ${dice.dots}`, function () {
+        expect(dice.dots).to.be.within(1, ub);
+      });
+    }
+  }
+});
